@@ -76,7 +76,7 @@ const Header = () => {
               <Button
                 onClick={handleLogOutClick}
                 variant="outline"
-                className="w-full text-left"
+                className="w-full justify-start gap-2"
               >
                 <LogOutIcon size={16} />
                 Log Out
