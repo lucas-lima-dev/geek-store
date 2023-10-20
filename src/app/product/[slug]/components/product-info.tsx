@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import DiscoundBadge from "@/components/ui/discount-badge";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import {
-  ArrowDownIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
   TruckIcon,
