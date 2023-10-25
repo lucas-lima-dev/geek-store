@@ -51,7 +51,7 @@ const OderItem = ({ order }: OrderItemProps) => {
                 Pedido com {order.orderProducts.length} produto(s)
               </p>
               <span className="text-sm opacity-60">
-                Feito em
+                Feito em{" "}
                 {format(new Date(order.createdAt), "dd/MM/yyyy 'às' HH:mm")}
               </span>
             </div>
