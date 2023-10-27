@@ -19,7 +19,7 @@ const Cart = () => {
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
-      // TODO: redirecionar para o login
+      alert("Você precisa estar logado para finalizar a compra");
       return;
     }
 
