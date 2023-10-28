@@ -1,7 +1,7 @@
 import { CartContext, CartProduct } from "@/providers/cart";
 import Image from "next/image";
 import { Button } from "./button";
-import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from "lucide-react";
+import { Minus, Plus, TrashIcon } from "lucide-react";
 import { useContext } from "react";
 
 interface CartItemProps {
@@ -62,7 +62,8 @@ const CartItem = ({ product }: CartItemProps) => {
               className="h-8 w-8"
               onClick={handleDecreaseQuantityClick}
             >
-              <ArrowLeftIcon size={16} />
+              <Minus size={16} />
+              
             </Button>
 
             <span className="text-xs">{product.quantity}</span>
@@ -73,7 +74,7 @@ const CartItem = ({ product }: CartItemProps) => {
               className="h-8 w-8"
               onClick={handleIncreaseQuantityClick}
             >
-              <ArrowRightIcon size={16} />
+              <Plus size={16}/>
             </Button>
           </div>
         </div>

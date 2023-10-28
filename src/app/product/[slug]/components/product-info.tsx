@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import DiscoundBadge from "@/components/ui/discount-badge";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { CartContext } from "@/providers/cart";
-import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
+import { Minus, Plus, TruckIcon } from "lucide-react";
 import { useContext, useState } from "react";
 
 interface ProductInfoProps {
@@ -51,7 +51,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
           variant="outline"
           onClick={handleDecreaseQuantityClick}
         >
-          <ArrowLeftIcon size={16} />
+          <Minus size={16} />
         </Button>
 
         <span>{quantity}</span>
@@ -61,7 +61,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
           variant="outline"
           onClick={handleIncreaseQuantityClick}
         >
-          <ArrowRightIcon size={16} />
+          <Plus size={16} />
         </Button>
       </div>
 
