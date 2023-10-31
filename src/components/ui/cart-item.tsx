@@ -15,11 +15,11 @@ const CartItem = ({ product }: CartItemProps) => {
     removeProductFromCart,
   } = useContext(CartContext);
 
-  const handleDecreaseQuantityClick = () => {
+  const handleDecreaseProductQuantityClick = () => {
     decreaseProductQuantity(product.id);
   };
 
-  const handleIncreaseQuantityClick = () => {
+  const handleIncreaseProductQuantityClick = () => {
     increaseProductQuantity(product.id);
   };
 
@@ -30,7 +30,7 @@ const CartItem = ({ product }: CartItemProps) => {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-accent">
+        <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-accent lg:h-[120px] lg:w-[120px]">
           <Image
             src={product.imageUrls[0]}
             width={0}
@@ -41,38 +41,38 @@ const CartItem = ({ product }: CartItemProps) => {
           />
         </div>
 
-        <div className="flex flex-col">
-          <p className="text-xs">{product.name}</p>
+        <div className="flex flex-col gap-1 lg:gap-2">
+          <p className="text-xs lg:text-sm">{product.name}</p>
 
           <div className="flex items-center gap-2">
-            <p className="text-sm font-bold">
+            <p className="text-sm font-bold lg:text-base">
               R$ {product.totalPrice.toFixed(2)}
             </p>
             {product.discountPercentage > 0 && (
-              <p className="text-xs line-through opacity-75">
+              <p className="text-xs line-through opacity-75 lg:text-sm">
                 R$ {Number(product.basePrice).toFixed(2)}
               </p>
             )}
           </div>
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 lg:gap-3">
             <Button
               size="icon"
               variant="outline"
-              className="h-8 w-8"
-              onClick={handleDecreaseQuantityClick}
+              className="h-8 w-8 lg:h-9 lg:w-9"
+              onClick={handleDecreaseProductQuantityClick}
             >
               <Minus size={16} />
               
             </Button>
 
-            <span className="text-xs">{product.quantity}</span>
+            <span className="text-xs lg:text-sm">{product.quantity}</span>
 
             <Button
               size="icon"
               variant="outline"
-              className="h-8 w-8"
-              onClick={handleIncreaseQuantityClick}
+              className="h-8 w-8 lg:h-9 lg:w-9"
+              onClick={handleIncreaseProductQuantityClick}
             >
               <Plus size={16}/>
             </Button>

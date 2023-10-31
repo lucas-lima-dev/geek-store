@@ -4,7 +4,6 @@ import { ProductWithTotalPrice } from "@/helpers/product";
 import {
   ReactNode,
   createContext,
-  use,
   useEffect,
   useMemo,
   useState,

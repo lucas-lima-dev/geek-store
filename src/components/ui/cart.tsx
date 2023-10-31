@@ -15,11 +15,11 @@ import { useSession } from "next-auth/react";
 const Cart = () => {
   const { data } = useSession();
 
-  const { products, total, totalDiscount } = useContext(CartContext);
+  const { products, subTotal, total, totalDiscount } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
-      alert("Você precisa estar logado para finalizar a compra");
+      // TODO: redirecionar para o login
       return;
     }
 
@@ -38,10 +38,7 @@ const Cart = () => {
 
   return (
     <div className="flex h-full flex-col gap-8">
-      <Badge
-        className="w-fit gap-1 border-2 border-primary px-3 py-[0.375rem] text-base uppercase"
-        variant="outline"
-      >
+      <Badge variant="heading">
         <ShoppingCartIcon size={16} />
         Carrinho
       </Badge>
@@ -70,28 +67,28 @@ const Cart = () => {
         <div className="flex flex-col gap-3">
           <Separator />
 
-          {/* <div className="flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-xs lg:text-sm">
             <p>Subtotal</p>
-            <p>R$ {subtotal.toFixed(2)}</p>
-          </div> */}
+            <p>R$ {subTotal.toFixed(2)}</p>
+          </div>
 
           <Separator />
 
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-xs lg:text-sm">
             <p>Entrega</p>
             <p>GRÁTIS</p>
           </div>
 
           <Separator />
 
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-xs lg:text-sm">
             <p>Descontos</p>
             <p>- R$ {totalDiscount.toFixed(2)}</p>
           </div>
 
           <Separator />
 
-          <div className="flex items-center justify-between text-sm font-bold">
+          <div className="flex items-center justify-between text-sm font-bold lg:text-base">
             <p>Total</p>
             <p>R$ {total.toFixed(2)}</p>
           </div>
