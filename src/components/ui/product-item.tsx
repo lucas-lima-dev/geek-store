@@ -1,8 +1,8 @@
 import { ProductWithTotalPrice } from "@/helpers/product";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import DiscountBadge from "./discount-badge";
+import { cn } from "@/lib/utils";
 
 interface ProductItemProps {
   product: ProductWithTotalPrice;
@@ -38,11 +38,11 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
         <div className="flex items-center gap-2 ">
           {product.discountPercentage > 0 ? (
             <>
-              <p className="truncate font-semibold">
+              <p className="truncate font-semibold lg:text-lg">
                 R$ {product.totalPrice.toFixed(2)}
               </p>
 
-              <p className="truncate text-xs line-through opacity-75">
+              <p className="truncate text-xs line-through opacity-75 lg:text-sm">
                 R$ {Number(product.basePrice).toFixed(2)}
               </p>
             </>
